@@ -1,0 +1,47 @@
+.header {
+  padding: 50px 0;
+}
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $tablet-max) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.header-logo {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  color: $color-light;
+  text-decoration: none;
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &:hover {
+    opacity: .5;
+  }
+
+  @media (max-width: $tablet-max) {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+}
+
+.header-link {
+  display: block;
+  min-width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('../../github-icon.png');
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  &:hover {
+    opacity: .5;
+  }
+}

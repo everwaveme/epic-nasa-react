@@ -1,4 +1,3 @@
-import styles from './Canvas.module.scss'
 import { useEffect } from "react";
 
 function Canvas() {
@@ -108,7 +107,7 @@ function Canvas() {
   }, []);
 
   return (
-    <canvas className={styles.canvas}></canvas>
+    <canvas className="canvas"></canvas>
   );
 }
 

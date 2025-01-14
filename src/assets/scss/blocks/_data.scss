@@ -12,16 +12,23 @@
 }
 
 .data-item {
-  display: none;
+  // display: none;
 
-  &.active {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    @media (max-width: $tablet-max) {
-      flex-direction: column;
-    }
+  @media (max-width: $tablet-max) {
+    flex-direction: column;
   }
+
+  // &.active {
+  //   display: flex;
+  //   justify-content: space-between;
+
+  //   @media (max-width: $tablet-max) {
+  //     flex-direction: column;
+  //   }
+  // }
 }
 
 .data-error {

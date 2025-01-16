@@ -46,10 +46,11 @@
 
 .data-img {
   border-radius: 20px;
-  transition: all .1s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   &:hover {
-    border: 1px solid $color-accent;
+    transform: scale(1.05);
+    cursor: zoom-in;
   }
 }
 

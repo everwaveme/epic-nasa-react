@@ -8,13 +8,9 @@ function DataList({ data, date }) {
     <ul className="data-list">
       {data.map(item => {
         return (
-          <DataItem
-            urlDate={urlDate}
-            outputDate={outputDate}
-            item={item}
-          />
+          <DataItem urlDate={urlDate} outputDate={outputDate} item={item} />
         );
-      })} 
+      })}
     </ul>
   );
 }

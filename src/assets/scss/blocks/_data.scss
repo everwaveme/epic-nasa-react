@@ -7,7 +7,7 @@
 }
 
 .data-list {
-  padding: 50px;
+  padding: 55px;
   list-style: none;
   background: rgba($color-dark, .7);
   border-radius: 20px;
@@ -20,7 +20,7 @@
 }
 
 .data-item {
-  // display: none;
+  display: none;
 
   display: flex;
   justify-content: space-between;
@@ -29,14 +29,15 @@
     flex-direction: column;
   }
 
-  // &.active {
-  //   display: flex;
-  //   justify-content: space-between;
+  &.active {
+    // display: flex;
+    // justify-content: space-between;
+    // display: none;
 
-  //   @media (max-width: $tablet-max) {
-  //     flex-direction: column;
-  //   }
-  // }
+    @media (max-width: $tablet-max) {
+      flex-direction: column;
+    }
+  }
 }
 
 .data-pic {

@@ -4,7 +4,6 @@ import arrowRight from "../../assets/arrow-right.svg";
 import DataItem from "../DataItem";
 import Slider from "react-slick";
 
-
 function DataList({ data, date }) {
   let sliderRef = useRef(null);
   const [prevSlide, setPrevSlide] = useState(0);
@@ -46,7 +45,7 @@ function DataList({ data, date }) {
         </Slider>
       </ul>
 
-      <div className="slider">
+      <div className="slider-nav">
         <div className="slider-prev">
           <img className="slider-prev-arrow"
             src={arrowLeft}

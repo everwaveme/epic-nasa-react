@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { apiKey } from "../../apiKey";
 import DataList from "../DataList";
-import Slider from "../Slider";
-
 
 function Main() {
   const url = 'https://api.nasa.gov/EPIC/api/natural/?api_key=';
@@ -11,9 +9,6 @@ function Main() {
   const [data, setData] = useState([]);
   const [date, setDate] = useState('');
   const [isLoading, setIsLoading] = useState(true);
-
-  // console.log(data);
-
 
   useEffect(() => {
     axios.get(url + apiKey)
@@ -30,18 +25,15 @@ function Main() {
   return (
     <div className="main">
       <div className="container">
-
         {!isLoading ? (
           <>
             <DataList data={data} date={date} />
-            {/* <Slider /> */}
           </>
         ) : (
           <p className="data-loading">
             📡 Загрузка данных со спутника...
           </p>
         )}
-
       </div>
     </div>
   );

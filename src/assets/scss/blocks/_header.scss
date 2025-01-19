@@ -14,20 +14,58 @@
 }
 
 .header-logo {
-  display: block;
+  position: relative;
   font-size: 22px;
   font-weight: 600;
   color: $color-light;
   text-decoration: none;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 15px rgba(156, 108, 255, 1);
+  transform: scale3d(1, 1, 1);
   transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   &:hover {
-    opacity: .5;
+    opacity: .7;
   }
 
   @media (max-width: $tablet-max) {
     margin-bottom: 25px;
     text-align: center;
+  }
+
+  &:before,
+  &:after {
+    content: 'Earth Polychromatic Imaging Camera';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    color: $color-light;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  &:before {
+    left: 3px;
+    text-shadow: 1px 0 crimson;
+    animation: noise 3s infinite linear alternate-reverse;
+  }
+
+  &:after {
+    left: -1px;
+    text-shadow: -3px 0 rgba($color-accent, 1);
+    animation: noise 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes noise {
+    $count: 20;
+
+    @for $i from 0 through $count {
+      #{percentage($i*(1/$count))} {
+        clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+      }
+    }
   }
 }
 

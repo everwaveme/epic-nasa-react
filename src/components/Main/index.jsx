@@ -5,10 +5,12 @@ import DataList from "../DataList";
 
 function Main() {
   const url = 'https://api.nasa.gov/EPIC/api/natural/?api_key=';
-  
+
   const [data, setData] = useState([]);
   const [date, setDate] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     axios.get(url + apiKey)
@@ -17,8 +19,13 @@ function Main() {
           setData(response.data);
           setDate(response.data[0].date);
           setIsLoading(false);
+        } else {
+          throw new Error('Потеряли связь со спутником... Пожалуйста, обновите страницу 🤕')
         }
-        //сделать проброс и отлов ошибок
+      })
+      .catch(err => {
+        setIsError(true);
+        setErrorMessage(err.message);
       })
   }, [])
 
@@ -30,9 +37,15 @@ function Main() {
             <DataList data={data} date={date} />
           </>
         ) : (
-          <p className="data-loading">
-            📡 Загрузка данных со спутника...
-          </p>
+          !isError ? (
+            <p className="data-loading">
+              👽 Загрузка данных со спутника...
+            </p>
+          ) : (
+            <p className="data-error">
+              {errorMessage}
+            </p>
+          )
         )}
       </div>
     </div>

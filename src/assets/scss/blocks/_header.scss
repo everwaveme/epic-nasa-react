@@ -53,7 +53,7 @@
   }
 
   &:after {
-    left: -1px;
+    left: 1px;
     text-shadow: -3px 0 rgba($color-accent, 1);
     animation: noise 2s infinite linear alternate-reverse;
   }

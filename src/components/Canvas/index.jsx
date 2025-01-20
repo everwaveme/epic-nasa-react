@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 function Canvas() {
-  
   useEffect(() => {
     const CANVAS = document.getElementsByTagName("canvas")[0],
       CTX = CANVAS.getContext("2d"),

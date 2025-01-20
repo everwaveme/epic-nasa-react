@@ -6,14 +6,29 @@
   padding: 0 50px;
 }
 
-.slider-prev,
-.slider-next {
+.slider-btn {
+  display: block;
+  width: 35px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   transition: all .3s 0s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 
   &:hover {
     opacity: .7;
   }
+}
+
+.prev {
+  background-image: url(../../arrow-left.svg);
+}
+
+.next {
+  background-image: url(../../arrow-right.svg);
 }
 
 .slider-prev-arrow,
